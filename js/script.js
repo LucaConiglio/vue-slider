@@ -6,7 +6,7 @@ const { createApp } = Vue;
 createApp({
   data () {
     return {
-        cambiaImmagine : 0,
+        
         currentIndex : 0,
          slides : {
               
@@ -33,9 +33,7 @@ createApp({
                      'Fortnite',
                      'Stray',
                      'Marvel Avengers',
-
                     ]     
-            
          },
             
 
@@ -60,23 +58,21 @@ createApp({
     onthumbImage (clickedImageIndex) {
         this.currentIndex = clickedImageIndex 
     },
-    
-     //cambioImmagine : setInterval( () => {
-     //   this.currentIndex ++;
 
-    // }, 3000),
-
-    //cambiaImmagine: function () {
-    //    currentIndex++;
-    //    setInterval(function () {
-    //    currentIndex++;
-    //    console.log("ciao");
-    //    }, 3000)
-    //  },
-      
+    stopImmagine () {
+        clearInterval(cambioImmagine);
+    },
+    startImmagine () {
+        cambioImmagine = setInterval( this.goNext, 3000);
+    }
 
   },
   mounted () {
-    //this.cambiaImmagine()
+    
+    cambioImmagine = setInterval( this.goNext, 3000);
+
+    
+    
+
   }
 }).mount("#app")
