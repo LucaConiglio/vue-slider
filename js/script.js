@@ -69,7 +69,7 @@ createApp({
   },
   mounted () {
     
-    cambioImmagine = setInterval( this.goNext, 3000);
+    this.startImmagine ()
 
     
     
