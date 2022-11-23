@@ -6,7 +6,7 @@ const { createApp } = Vue;
 createApp({
   data () {
     return {
-        
+        cambioImmagine : null,
         currentIndex : 0,
          slides : {
               
@@ -63,7 +63,7 @@ createApp({
         clearInterval(cambioImmagine);
     },
     startImmagine () {
-        cambioImmagine = setInterval( this.goNext, 3000);
+       cambioImmagine = setInterval( this.goNext, 3000);
     }
 
   },
